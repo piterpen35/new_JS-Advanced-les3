@@ -1,0 +1,44 @@
+<app-child (fromChild)="getArray($event)"></app-child>
+<div class="main-container">
+  <table>
+    <tr>
+      <td>#</td>
+      <td>Task</td>
+      <td>Check</td>
+      <td>DONE/IN PROGRESS</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+
+  </table>
+  <hr>
+  <table>
+    <tr *ngFor="let task of taskArray; index as i" class="borderBottom tr">
+
+      <td>{{ i+1 }}</td>
+      <td>{{ task.name }}</td>
+      <ng-container *ngIf="task.defaultChecekd === true; else elseTemplate">
+        <td>
+          <input type="checkbox" class="check" (click)="checkBoxClick(i)" checked>
+        </td>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <td>
+          <input type="checkbox" class="check" (click)="checkBoxClick(i)">
+        </td>
+      </ng-template>
+      <td class="task-status" *ngIf="task.status === 'DONE'" style="color: green;">{{ task.status }}</td>
+      <td class="task-status" *ngIf="task.status === 'IN PROGRESS'" style="color: red;">{{ task.status }}</td>
+
+      <td><input type="button" value="Edit" (click)="edit(i)" class="edit-btn"></td>
+      <td *ngIf="task.status === 'DONE'"><input type="button" value="Delete" (click)="delete(i)" class="delete-btn"></td>
+      <td *ngIf="task.status === 'IN PROGRESS'"><input type="button" value="Delete" (click)="delete(i)" class="delete-btn" disabled style="background-color: rgba(231, 73, 73, 0.849);"></td>  
+    </tr>
+
+  </table>
+
+  <div class="edit-area">
+    <input type="text" class="edit-input">
+    <input type="button" value="save" class="save-btn" (click)="save()">
+  </div>
+</div>

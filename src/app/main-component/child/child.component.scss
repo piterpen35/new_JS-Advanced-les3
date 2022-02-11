@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    margin: 0 auto;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+
+
+    hr {
+        border: 1px solid rgb(235, 235, 235);
+    }
+
+    .text-plan-your-day {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .text-userName-task-count {
+        @extend .text-plan-your-day;
+    }
+
+    .wrapper {
+        padding-top: 10px;
+        display: flex;
+
+        .task-input {
+            width: 80%;
+            height: 40px;
+            border: 1px solid lightgray;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+    
+        .add-task-btn {
+            width: 10%;
+            height: 40px;
+            color: white;
+            border: none;
+            background-color: rgb(1, 172, 1);
+            border-radius: 5px;
+        }
+    }
+}

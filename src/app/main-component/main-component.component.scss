@@ -1,0 +1,72 @@
+
+
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: monospace;
+
+
+    hr {
+        border: 1px solid rgb(235, 235, 235);
+    }
+
+    table {
+        border-collapse: collapse;
+      }
+      
+      .borderBottom {
+        border-bottom: 2px solid rgb(235, 235, 235);
+      }
+
+    td {
+        width: 20%;
+    }
+
+    .tr:hover {
+        background-color: lightgray;
+    }
+
+    .edit-area {
+        display: none;
+        justify-content: space-around;
+        align-items: center;
+        width: 400px;
+        height: 150px;
+        margin: 0px auto;
+        margin-top: 50px;
+        background-color: lightgray;
+
+        .edit-input {
+            height: 40px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .save-btn {
+            height: 40px;
+            width: 80px;
+            border: none;
+            border-radius: 5px;
+            color: whitesmoke;
+            background-color: rgb(2, 161, 2);
+        }
+    }
+
+    .delete-btn {
+        background-color: red;
+        height: 30px;
+        width: 60px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .edit-btn {
+        background-color: yellow;
+        color: black;
+        @extend .delete-btn;
+    }
+}
